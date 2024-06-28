@@ -10,28 +10,26 @@ export default function MovieDisplay({ movie }) {
   }
 
   return (
-    <div id="movieDisplay">
-      <div className="movie">
-        <div className="image-container">
-          <img
-            src={img_base_path + movie.poster_path || noPoster}
-            alt={movie.title || movie.original_title}
-            className=""
-          />
-        </div>
-        <div>
-          <h3>
-            {movie.title ||
-              movie.original_title ||
-              movie.name ||
-              movie.original_name}
-          </h3>
-          <p>
-            {movie?.release_date
-              ? formatDate(movie.release_date)
-              : formatDate(movie.first_air_date)}
-          </p>
-        </div>
+    <div className="movie">
+      <div className="image-container">
+        <img
+          src={img_base_path + movie.poster_path || noPoster}
+          alt={movie.title || movie.original_title}
+          className=""
+        />
+      </div>
+      <div>
+        <h3>
+          {movie.title ||
+            movie.original_title ||
+            movie.name ||
+            movie.original_name}
+        </h3>
+        <p>
+          {movie?.release_date
+            ? formatDate(movie.release_date)
+            : formatDate(movie.first_air_date)}
+        </p>
       </div>
     </div>
   );
